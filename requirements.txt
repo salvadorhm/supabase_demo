@@ -5,6 +5,7 @@ cffi==2.1.1
 cheroot==11.1.2
 cryptography==50.0.2
 deprecation==2.1.0
+dotenv==0.9.9
 h11==0.16.0
 h2==4.4.1
 hpack==4.2.0
@@ -23,6 +24,7 @@ pycparser==3.12
 pydantic==2.14.2
 pydantic_core==2.50.2
 PyJWT==2.15.1
+python-dotenv==1.2.4
 realtime==2.33.0
 storage3==2.33.0
 StrEnum==0.5.0

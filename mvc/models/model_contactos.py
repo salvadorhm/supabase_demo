@@ -35,7 +35,7 @@ class ModelContactos:
         try:
             # INSERT INTO contactos(nombre,email,telefono) VALUES(?,?,?);
             data = {
-                "nombre":nombre,
+                "nombr":nombre,
                 "email":email,
                 "telefono":telefono
             }
@@ -70,7 +70,7 @@ if __name__ == "__main__":
     model_contactos = ModelContactos()
     print(model_contactos.obtenerContactos())
     #print(model_contactos.buscarContacto(2))
-    #print(model_contactos.insertarContacto("Carthoris","carthoris@email","333333"))
+    print(model_contactos.insertarContacto("Carthoris","carthoris@email","333333"))
     #print(model_contactos.obtenerContactos())
     #print(model_contactos.borrarContacto(4))
     #print(model_contactos.actualizarContacto(5,"Juan","juan@email","8888888"))

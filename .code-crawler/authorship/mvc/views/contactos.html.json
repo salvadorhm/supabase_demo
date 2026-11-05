@@ -1,0 +1,58 @@
+{
+  "filePath": "mvc/views/contactos.html",
+  "lines": [
+    {
+      "line": 0,
+      "author": "human",
+      "confidence": 0.3733333333333333,
+      "aiEdits": 0,
+      "humanEdits": 14,
+      "lastEditType": "human",
+      "lastEditTimestamp": 1793908071012,
+      "signals": {
+        "typingRhythm": 0.3,
+        "editSize": 0.07999999999999996,
+        "cursorMovement": 0.3,
+        "editSequence": 0.8300000000000001,
+        "undoFrequency": 0.5,
+        "extensionSource": 0.5,
+        "velocityProfile": 0.5,
+        "selectionPattern": 0.5,
+        "pastePattern": 0.2,
+        "deletionPattern": 0.5,
+        "pausePattern": 0.5
+      }
+    },
+    {
+      "line": 1,
+      "author": "human",
+      "confidence": 0.3733333333333333,
+      "aiEdits": 0,
+      "humanEdits": 1,
+      "lastEditType": "human",
+      "lastEditTimestamp": 1793908071012,
+      "signals": {
+        "typingRhythm": 0.3,
+        "editSize": 0.07999999999999996,
+        "cursorMovement": 0.3,
+        "editSequence": 0.8300000000000001,
+        "undoFrequency": 0.5,
+        "extensionSource": 0.5,
+        "velocityProfile": 0.5,
+        "selectionPattern": 0.5,
+        "pastePattern": 0.2,
+        "deletionPattern": 0.5,
+        "pausePattern": 0.5
+      }
+    }
+  ],
+  "summary": {
+    "totalLines": 2,
+    "aiLines": 0,
+    "humanLines": 2,
+    "mixedLines": 0,
+    "aiPercentage": 0,
+    "humanPercentage": 100
+  },
+  "lastUpdated": 1793908072041
+}

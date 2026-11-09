@@ -1,0 +1,1 @@
+2026-11-09 14:36:11 [ERROR] mvc.models.model_contactos: ERROR 102: {'message': 'invalid input syntax for type bigint: "null"', 'code': '22P02', 'hint': None, 'details': None}

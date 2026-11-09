@@ -3,8 +3,12 @@ from supabase import create_client, Client
 from dotenv import load_dotenv
 import hashlib
 import hmac
+from typing import Any, cast
+import logging
 
 load_dotenv()
+
+logger = logging.getLogger(__name__)
 
 class ModelContactos:
 
@@ -16,24 +20,25 @@ class ModelContactos:
             )
             self.SECRET_KEY = b"hola"
         except Exception as error:
-            print(f"ERROR 100: {error.args[0]}")
+            print(f"ERROR 100: {str(error)}")
 
     def generar_hash(self,id: int) -> str:
         try:
             """Genera un hash único a partir del ID."""
             mensaje = str(id).encode("utf-8")
             firma =  hmac.new(self.SECRET_KEY, mensaje, hashlib.sha256).hexdigest()
+            # Concatena el id:firma
             return f"{id}:{firma}"
         except Exception as error:
-            print(f"ERROR 106: {error.args[0]}")
+            print(f"ERROR 106: {str(error)}")
             return ""
 
 
-    def validar_hash(self,hash_a_validar: str) -> int:
+    def validar_hash(self,hash_a_validar: str) -> int|None:
         try:
-            # Separa el id y la firma
+            # Separa el id, separador y la firma
             id_str, sep, _ = hash_a_validar.partition(":")
-            resultado_id = -1
+            resultado_id = None
 
             # Solo calculamos el hash si la estructura básica es válida
             if sep and id_str.isdigit():
@@ -41,24 +46,30 @@ class ModelContactos:
                 if hmac.compare_digest(token_esperado, hash_a_validar):
                     resultado_id = int(id_str)
                 else:
-                    resultado_id = -1
+                    resultado_id = None
             else:
-                resultado_id = -1
+                resultado_id = None
 
             return resultado_id
         except Exception as error:
-            print(f"ERROR 107: {error.args[0]}")
+            print(f"ERROR 107: {str(error)}")
             return -1
 
-    def obtenerContactos(self):
+    def obtenerContactos(self) -> list[dict[str,Any]]:
+        contactos: list[dict[str,Any]]
         try:
             # SELECT * FROM contactos;
             response = self.supabase.table("contactos").select("*").execute()
+            registros = response.data or []
             for registro in response.data:
-                registro["id_contacto"] = self.generar_hash(registro["id_contacto"]) # type: ignore
-            return response.data
+                id_num = int(registro["id_contacto"]) # type: ignore
+                registro["id_contacto"] = self.generar_hash(id_num) # type: ignore
+            contactos = cast(list[dict[str, Any]],registros)
+            return contactos
         except Exception as error:
-            print(f"ERROR 101: {error.args[0]}")
+            logger.error("ERROR 101: %s", error)
+            print("ERROR 101: {str(error)}")
+            return []
 
     def buscarContacto(self,id_contacto:str):
         try:
@@ -67,7 +78,9 @@ class ModelContactos:
             response = self.supabase.table("contactos").select("*").eq("id_contacto",id).execute()
             return response.data
         except Exception as error:
-            print(f"ERROR 102: {error.args[0]}")
+            logger.error("ERROR 102: %s", error)
+            print(f"ERROR 102: {str(error)}")
+            return []
 
     def insertarContacto(self,nombre:str,email:str,telefono:str):
         try:
@@ -80,7 +93,7 @@ class ModelContactos:
             response = self.supabase.table("contactos").insert(data).execute()
             return response.data
         except Exception as error:
-            print(f"ERROR 103: {error.args[0]}")
+            print(f"ERROR 103: {str(error)}")
 
     def borrarContacto(self,id_contacto:str):
         try:
@@ -89,7 +102,7 @@ class ModelContactos:
             response = self.supabase.table("contactos").delete().eq("id_contacto",id).execute()
             return response.data
         except Exception as error:
-            print(f"ERROR 104: {error.args[0]}")
+            print(f"ERROR 104: {str(error)}")
 
     def actualizarContacto(self,id_contacto:str,nombre:str,email:str,telefono:str):
         try:
@@ -103,7 +116,7 @@ class ModelContactos:
             response = self.supabase.table("contactos").update(data).eq("id_contacto",id).execute()
             return response.data
         except Exception as error:
-            print(f"ERROR 105: {error.args[0]}")
+            print(f"ERROR 105: {str(error)}")
 
 
 if __name__ == "__main__":

@@ -1,14 +1,19 @@
 $def with(contacto)
 
-<form name="contacto" method="GET">
-    <label for="nombre">Nombre</label>
-    <input type="text" name="nombre" id="nombre" value="$contacto[0]['nombre']"><br>
+$if contacto != []:
+    <form name="contacto" method="POST">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" value="$contacto[0]['nombre']"><br>
 
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" value="$contacto[0]['email']"><br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value="$contacto[0]['email']"><br>
 
-    <label for="telefono">Teléfono</label>
-    <input type="tel" name="telefono" id="telefono" value="$contacto[0]['telefono']"><br>
+        <label for="telefono">Teléfono</label>
+        <input type="tel" name="telefono" id="telefono" value="$contacto[0]['telefono']"><br>
 
-    <input type="button" onclick="location.href='/contactos';" value="Regresar">
-</form>
+        <input type="button" onclick="location.href='/contactos';" value="Regresar">
+    </form>
+
+$else:
+    <h2>Contacto no encontrado</h2>
+    <a href="/contactos">Regresar</a>

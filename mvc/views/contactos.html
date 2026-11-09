@@ -5,7 +5,6 @@ $def with(datos)
 
 <table>
     <thead>
-        <th>ID</th>
         <th>Nombre</th>
         <th>Email</th>
         <th>Teléfono</th>
@@ -16,7 +15,6 @@ $def with(datos)
     <tbody>
         $for registro in datos:
             <tr>
-                <td>$registro["id_contacto"]</td>
                 <td>$registro["nombre"]</td>
                 <td>$registro["email"]</td>
                 <td>$registro["telefono"]</td>

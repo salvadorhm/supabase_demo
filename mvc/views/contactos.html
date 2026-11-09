@@ -1,7 +1,7 @@
 $def with(datos)
 <h1>Contactos</h1>
 
-$datos
+<a href="/insertar_contacto">Nuevo contacto</a>
 
 <table>
     <thead>
@@ -9,13 +9,20 @@ $datos
         <th>Nombre</th>
         <th>Email</th>
         <th>Teléfono</th>
+        <th>Ver</th>
+        <th>Actualizar</th>
+        <th>Borrar</th>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Dejah</td>
-            <td>dejah@email.com</td>
-            <td>11111111</td>
-        </tr>
+        $for registro in datos:
+            <tr>
+                <td>$registro["id_contacto"]</td>
+                <td>$registro["nombre"]</td>
+                <td>$registro["email"]</td>
+                <td>$registro["telefono"]</td>
+                <td><a href="/ver_contacto/$registro['id_contacto']">Ver</a></td>
+                <td><a href="/actualizar_contacto/$registro['id_contacto']">Actualizar</a></td>
+                <td><a href="/borrar_contacto/$registro['id_contacto']">Borrar</a></td>
+            </tr>
     </tbody>
 </table>

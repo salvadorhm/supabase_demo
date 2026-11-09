@@ -35,7 +35,7 @@ class ModelContactos:
         try:
             # INSERT INTO contactos(nombre,email,telefono) VALUES(?,?,?);
             data = {
-                "nombr":nombre,
+                "nombre":nombre,
                 "email":email,
                 "telefono":telefono
             }

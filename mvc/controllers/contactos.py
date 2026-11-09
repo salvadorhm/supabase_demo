@@ -12,7 +12,7 @@ class Contactos:
         # Almacena en datos los registros recibidos de Supabase
         datos = model_contactos.obtenerContactos()
 
-        print(datos)
+        #print(datos)
 
         # Envia a contactos.html los datos de supabase
         return render.contactos(datos) # type: ignore

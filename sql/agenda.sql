@@ -4,3 +4,4 @@ CREATE TABLE IF NOT EXISTS contactos(
     email text not null,
     telefono text not null
 );
+

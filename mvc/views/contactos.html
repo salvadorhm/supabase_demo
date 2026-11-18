@@ -5,6 +5,7 @@ $def with(datos)
 
 <table>
     <thead>
+        <th>Foto</th>
         <th>Nombre</th>
         <th>Email</th>
         <th>Teléfono</th>
@@ -15,6 +16,7 @@ $def with(datos)
     <tbody>
         $for registro in datos:
             <tr>
+                <td><img src="static/fotos/$registro['foto']" height="50px" width="50px"></td>
                 <td>$registro["nombre"]</td>
                 <td>$registro["email"]</td>
                 <td>$registro["telefono"]</td>

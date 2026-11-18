@@ -91,22 +91,22 @@
     },
     {
       "line": 9,
-      "author": "mixed",
-      "confidence": 0.8999999999999999,
+      "author": "human",
+      "confidence": 0.3733333333333333,
       "aiEdits": 1,
-      "humanEdits": 1,
+      "humanEdits": 17,
       "lastEditType": "human",
-      "lastEditTimestamp": 1794255977887,
+      "lastEditTimestamp": 1794510746582,
       "signals": {
-        "typingRhythm": 0.5,
-        "editSize": 0.95,
-        "cursorMovement": 0.5,
-        "editSequence": 0.5,
+        "typingRhythm": 0.3,
+        "editSize": 0.07999999999999996,
+        "cursorMovement": 0.3,
+        "editSequence": 0.8300000000000001,
         "undoFrequency": 0.5,
         "extensionSource": 0.5,
         "velocityProfile": 0.5,
         "selectionPattern": 0.5,
-        "pastePattern": 0.5,
+        "pastePattern": 0.2,
         "deletionPattern": 0.5,
         "pausePattern": 0.5
       }
@@ -116,9 +116,9 @@
       "author": "human",
       "confidence": 0.92,
       "aiEdits": 0,
-      "humanEdits": 19,
+      "humanEdits": 33,
       "lastEditType": "human",
-      "lastEditTimestamp": 1794256594631,
+      "lastEditTimestamp": 1794510781301,
       "signals": {
         "typingRhythm": 0.125,
         "editSize": 0.19999999999999996,
@@ -129,7 +129,7 @@
         "velocityProfile": 0.5,
         "selectionPattern": 0.7,
         "pastePattern": 0.2,
-        "deletionPattern": 0.5,
+        "deletionPattern": 0.15,
         "pausePattern": 0.5
       }
     },
@@ -179,12 +179,12 @@
     },
     {
       "line": 13,
-      "author": "ai",
+      "author": "mixed",
       "confidence": 0.8999999999999999,
       "aiEdits": 1,
-      "humanEdits": 0,
-      "lastEditType": "ai",
-      "lastEditTimestamp": 1794255958395,
+      "humanEdits": 1,
+      "lastEditType": "human",
+      "lastEditTimestamp": 1794256956836,
       "signals": {
         "typingRhythm": 0.5,
         "editSize": 0.95,
@@ -224,11 +224,11 @@
   ],
   "summary": {
     "totalLines": 10,
-    "aiLines": 5,
-    "humanLines": 4,
+    "aiLines": 4,
+    "humanLines": 5,
     "mixedLines": 1,
-    "aiPercentage": 50,
-    "humanPercentage": 40
+    "aiPercentage": 40,
+    "humanPercentage": 50
   },
-  "lastUpdated": 1794256595647
+  "lastUpdated": 1794513343034
 }

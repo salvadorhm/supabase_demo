@@ -57,6 +57,6 @@ if __name__ == "__main__":
     print("Autenticación de usuarios")
     objeto = AuthUsers()
     #print(objeto.iniciarSesion("dejah@email.com","12345678")) # Contraseña no valida
-    #print(objeto.iniciarSesion("dejah@email.com","123456789")) # Contraseñan valida
+    print(objeto.iniciarSesion("dejah@email.com","12345678")) # Contraseñan valida
 
-    print(objeto.registrarUsuario("johnq@email.com","123456789"))
+    #print(objeto.registrarUsuario("johnq@email.com","123456789"))

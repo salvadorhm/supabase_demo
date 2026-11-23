@@ -6,7 +6,7 @@ render = web.template.render("mvc/views", base="template")
 
 class VerContacto:
 
-    def GET(self,id_contacto):
+    def GET(self,id_contacto:str):
 
         model_contactos = ModelContactos()
 

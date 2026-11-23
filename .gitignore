@@ -4,3 +4,7 @@ __pycache__/
 .env
 temporal/
 aplicacion.log
+*.png
+*.jpg
+*.jepg
+*.webp

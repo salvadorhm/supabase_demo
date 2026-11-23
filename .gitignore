@@ -8,3 +8,4 @@ aplicacion.log
 *.jpg
 *.jepg
 *.webp
+.code-crawler/
